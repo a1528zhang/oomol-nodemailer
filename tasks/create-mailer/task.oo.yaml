@@ -1,0 +1,28 @@
+executor:
+  name: nodejs
+  options:
+    entry: main.js
+inputs_def:
+  - handle: smtpHost
+    json_schema:
+      type: string
+  - handle: port
+    json_schema:
+      type: number
+  - handle: user
+    json_schema:
+      type: string
+  - handle: password
+    json_schema:
+      contentMediaType: oomol/secret
+      type: string
+outputs_def:
+  - handle: mailerObj
+    json_schema:
+      contentMediaType: oomol/var
+    kind: NodeMailerObj
+  - handle: from
+    json_schema:
+      type: string
+title: Create mailer
+icon: ":twemoji:e-mail:"

@@ -1,0 +1,34 @@
+nodes:
+  - task: self::create-mailer
+    title: "Create mailer #1"
+    node_id: create-mailer#1
+    inputs_from:
+      - handle: smtpHost
+        value: smtp.163.com
+      - handle: port
+        value: 25
+      - handle: secure
+        value: false
+      - handle: user
+        value: zl343376595@163.com
+      - handle: password
+        value: Custom,163 stmp secret,zl343376595@163.com
+  - task: self::send-mail
+    title: "Send mail #1"
+    node_id: send-mail#1
+    inputs_from:
+      - handle: mailer
+        from_node:
+          - node_id: create-mailer#1
+            output_handle: mailerObj
+      - handle: from
+        value: zl343376595@163.com
+        from_node:
+          - node_id: create-mailer#1
+            output_handle: from
+      - handle: to
+        value: zhangli@oomol.com
+      - handle: subject
+        value: test send
+      - handle: text
+        value: test content 2

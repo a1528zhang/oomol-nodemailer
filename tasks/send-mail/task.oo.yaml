@@ -1,0 +1,29 @@
+executor:
+  name: nodejs
+  options:
+    entry: main.js
+inputs_def:
+  - handle: mailer
+    json_schema:
+      contentMediaType: oomol/var
+    kind: NodeMailerObj
+    nullable: false
+  - handle: from
+    json_schema:
+      type: string
+  - handle: to
+    json_schema:
+      type: string
+  - handle: subject
+    json_schema:
+      type: string
+  - handle: text
+    json_schema:
+      type: string
+      ui:widget: text
+outputs_def:
+  - handle: output
+    json_schema:
+      type: string
+title: Send mail
+icon: ":fa6-solid:arrow-right-from-bracket:"
