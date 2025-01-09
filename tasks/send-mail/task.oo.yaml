@@ -21,6 +21,15 @@ inputs_def:
     json_schema:
       type: string
       ui:widget: text
+  - handle: attachments
+    json_schema:
+      type: array
+      items:
+        type: string
+        ui:widget: file
+    value:
+      []
+    nullable: true
 outputs_def:
   - handle: output
     json_schema:

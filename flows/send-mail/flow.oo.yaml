@@ -4,13 +4,9 @@ nodes:
     node_id: create-mailer#1
     inputs_from:
       - handle: smtpHost
-        value: smtp.163.com
       - handle: port
         value: 25
-      - handle: secure
-        value: false
       - handle: user
-        value: zl343376595@163.com
       - handle: password
         value: Custom,163 stmp secret,zl343376595@163.com
   - task: self::send-mail
@@ -27,8 +23,10 @@ nodes:
           - node_id: create-mailer#1
             output_handle: from
       - handle: to
-        value: zhangli@oomol.com
       - handle: subject
         value: test send
       - handle: text
         value: test content 2
+      - handle: attachments
+        value:
+          []

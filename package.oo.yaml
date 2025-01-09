@@ -1,4 +1,4 @@
-version: 0.0.1
+version: 0.0.2
 scripts:
   # Script executed when the container is first loaded
   # eg: bootstrap: pip install pandas
@@ -9,4 +9,5 @@ icon: ":twemoji:e-mail:currentColor:"
 name: node-mailer
 description: Package for NodeMailer
 displayName: Node Mailer
-releaseNotes: 1. support send mail
+releaseNotes: 1. support add attachments
+repository: https://github.com/a1528zhang/oomol-nodemailer
