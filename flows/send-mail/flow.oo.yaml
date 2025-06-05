@@ -8,7 +8,9 @@ nodes:
         value: 25
       - handle: user
       - handle: password
-        value: Custom,163 stmp secret,zl343376595@163.com
+    description: |-
+      Fill in the sender's information
+      填入发送者的信息
   - task: self::send-mail
     title: "Send mail #1"
     node_id: send-mail#1
@@ -24,9 +26,10 @@ nodes:
             output_handle: from
       - handle: to
       - handle: subject
-        value: test send
       - handle: text
-        value: test content 2
       - handle: attachments
         value:
           []
+    description: |-
+      Fill in the recipient's information
+      填入接收者的信息
